@@ -14,6 +14,8 @@ data <- data[(data$Date >= as.Date("2007-02-01", "%Y-%m-%d") & data$Date <= as.D
 #convert variable to numeric type
 data$Global_active_power <- as.numeric(data$Global_active_power)
 
+#open the png output system and write plot to file--note that the requirements don't specify
+# that the plot must be made within R and then copied, so the code was written to only output to png
 png("ExData_Plotting1-master/plot1.png", width=480, height=480)
 hist(data$Global_active_power, col=c("red"), xlab="Global Active Power (kilowatts)", main="Global Active Power")
 dev.off()

@@ -16,7 +16,8 @@ data$Global_active_power <- as.numeric(data$Global_active_power)
 #create datetime variable
 data$DateTime <- as.POSIXct(strptime(paste(data$Date, data$Time, sep=" "), "%Y-%m-%d %H:%M:%S"))
 
-#2
+#open the png output system and write plot to file--note that the requirements don't specify
+# that the plot must be made within R and then copied, so the code was written to only output to png
 png("ExData_Plotting1-master/plot2.png", width=480, height=480)
 plot(data$DateTime, data$Global_active_power, type="l", ylab="Global Active Power (kilowatts)", xlab="")
 dev.off()
